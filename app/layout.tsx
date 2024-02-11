@@ -19,10 +19,17 @@ interface RootLayoutProps {
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={(firaCode.className, `flex flex-col h-screen`)}>
-        <HeaderComponent />
-        <div className="flex-1">{children}</div>
-        <FooterComponent />
+      <body
+        className={
+          (firaCode.className,
+          `flex flex-col h-screen bg-[#01080E] p-8 text-white `)
+        }
+      >
+        <div className="flex flex-col h-screen bg-[#011627] rounded-3xl border border-[#1E2D3D]">
+          <HeaderComponent />
+          <div className="flex-1">{children}</div>
+          <FooterComponent />
+        </div>
       </body>
     </html>
   );
