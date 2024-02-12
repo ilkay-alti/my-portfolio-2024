@@ -27,7 +27,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
       >
         <div className="flex flex-col h-screen bg-[#011627] rounded-3xl border border-[#1E2D3D]">
           <HeaderComponent />
-          <div className="flex-1">{children}</div>
+          <div className="flex-grow">{children}</div>
           <FooterComponent />
         </div>
       </body>
