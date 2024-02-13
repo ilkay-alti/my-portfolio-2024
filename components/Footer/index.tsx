@@ -21,7 +21,7 @@ const FooterComponent = () => {
               key={item.title}
               href={item.href}
               className={
-                "flex items-center justify-center h-full px-8 border-r border-[#1E2D3D] group/edit "
+                "flex items-center justify-center h-full px-4 border-r border-[#1E2D3D] group/edit "
               }
             >
               {item.title === "twitter" ? (
@@ -33,7 +33,7 @@ const FooterComponent = () => {
           );
         })}
 
-        <div className="h-full  w-14" />
+        <div />
       </div>
       <Link
         href={"/github"}

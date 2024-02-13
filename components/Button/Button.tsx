@@ -4,13 +4,11 @@ import { twMerge } from "tailwind-merge";
 
 const button = cva(
   [
-    "leading-none",
     "flex",
-    "gap-2",
     "items-center",
     "justify-center",
-    "w-[122px]",
-    "h-[38px]",
+    "px-[14px]",
+    "py-[10px]",
     "rounded-lg",
   ],
   {
