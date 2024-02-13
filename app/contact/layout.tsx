@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import type { Metadata } from "next";
 import { Folder } from "@/components/Folder/Folder";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Contact-me",
@@ -42,12 +43,54 @@ const RootLayout: FC<InfoLayoutProps> = ({ children }) => {
   return (
     <div className="flex h-full">
       <div className="flex flex-col w-1/4 h-full  border-r border-[#1E2D3D]">
-        <Folder folderTitle="contacts" image="down" data={contactsData} />
-        <Folder
-          folderTitle="find-me-also-in"
-          image="down"
-          data={findMeAlsoData}
-        />
+        <Folder folderTitle="contacts" image="down">
+          <div className="p-[22px] flex flex-col gap-3">
+            {contactsData.map((data, i) => {
+              return (
+                <Link
+                  key={i}
+                  href={data.href}
+                  target="_blank"
+                  className="flex gap-2 text-[#607B96] group"
+                >
+                  <Image
+                    src={data.icon}
+                    alt={i.toString()}
+                    height={17}
+                    width={15}
+                  />
+                  <label className="group-hover:text-white hover:cursor-pointer ">
+                    {data.title}
+                  </label>
+                </Link>
+              );
+            })}
+          </div>
+        </Folder>
+        <Folder folderTitle="find-me-also-in" image="down">
+          <div className="p-[22px] flex flex-col gap-3">
+            {findMeAlsoData.map((data, i) => {
+              return (
+                <Link
+                  key={i}
+                  href={data.href}
+                  target="_blank"
+                  className="flex gap-2 text-[#607B96] group"
+                >
+                  <Image
+                    src={data.icon}
+                    alt={i.toString()}
+                    height={17}
+                    width={15}
+                  />
+                  <label className="group-hover:text-white hover:cursor-pointer ">
+                    {data.title}
+                  </label>
+                </Link>
+              );
+            })}
+          </div>
+        </Folder>
       </div>
       <div className="flex-grow">{children}</div>
     </div>

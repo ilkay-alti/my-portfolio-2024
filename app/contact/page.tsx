@@ -14,7 +14,7 @@ const ContactPage = () => {
 
   return (
     <div className="flex flex-col h-full ">
-      <div className="flex h-[41px] border-b border-[#1E2D3D] ">
+      <div className="flex h-[44px] border-b border-[#1E2D3D] ">
         <div className="flex px-[14px] items-center gap-11 border-[#1E2D3D] border-r h-full">
           <label className="text-[#607B96]">contacts</label>
           <Image src="/close-icon.svg" alt="1" width={18} height={18} />
