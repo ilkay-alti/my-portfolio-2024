@@ -103,7 +103,7 @@ const ProjectPage = () => {
             <Image src="/close-icon.svg" alt="1" width={18} height={18} />
           </div>
         </div>
-        <div className="max-h-[calc(100vh-224px)]  overflow-y-auto flex justify-center p-14 scrollbar-thin scrollbar-webkit  ">
+        <div className="max-h-[calc(100vh-224px)]   flex justify-center p-14  overflow-y-auto scrollbar-thin scrollbar-webkit  ">
           <div className="h-full grid grid-cols-2 gap-20">
             {filteredProjects.map((project, i) => (
               <Card key={i} data={project} />

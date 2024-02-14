@@ -12,7 +12,7 @@ const HeaderComponent = () => {
     },
     {
       title: "_about-me",
-      href: "/about",
+      href: "/about/global",
     },
     {
       title: "_projects",
@@ -21,6 +21,7 @@ const HeaderComponent = () => {
   ];
 
   const pathname = usePathname();
+  console.log(pathname);
 
   return (
     <div className=" text-[#607B96] border-b border-[#1E2D3D] h-14 flex items-center rounded-t-3xl">
@@ -36,7 +37,8 @@ const HeaderComponent = () => {
                 href={item.href}
                 className={
                   "flex items-center justify-center h-full px-8 border-r border-[#1E2D3D] " +
-                  (pathname === item.href &&
+                  ((pathname === item.href ||
+                    pathname.startsWith(item.href + "/")) &&
                     "text-white border-b-[3px] border-b-[#FEA55F]")
                 }
               >

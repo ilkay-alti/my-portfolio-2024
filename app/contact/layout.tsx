@@ -13,33 +13,32 @@ interface InfoLayoutProps {
   children: React.ReactNode;
 }
 
+const contactsData = [
+  {
+    title: "ilkayalti@hotmail.com",
+    href: "ilkayalti@hotmail.com",
+    icon: "/mailIcon.svg",
+  },
+  {
+    title: "+905555555555",
+    href: "905555555555",
+    icon: "/phoneIcon.svg",
+  },
+];
+
+const findMeAlsoData = [
+  {
+    title: "YouTube channel",
+    href: "ilkayalti@hotmail.com",
+    icon: "/linkIcon.svg",
+  },
+  {
+    title: "Twich profile",
+    href: "905555555555",
+    icon: "/linkIcon.svg",
+  },
+];
 const RootLayout: FC<InfoLayoutProps> = ({ children }) => {
-  const contactsData = [
-    {
-      title: "ilkayalti@hotmail.com",
-      href: "ilkayalti@hotmail.com",
-      icon: "/mailIcon.svg",
-    },
-    {
-      title: "+905555555555",
-      href: "905555555555",
-      icon: "/phoneIcon.svg",
-    },
-  ];
-
-  const findMeAlsoData = [
-    {
-      title: "YouTube channel",
-      href: "ilkayalti@hotmail.com",
-      icon: "/linkIcon.svg",
-    },
-    {
-      title: "Twich profile",
-      href: "905555555555",
-      icon: "/linkIcon.svg",
-    },
-  ];
-
   return (
     <div className="flex h-full">
       <div className="flex flex-col w-1/4 h-full  border-r border-[#1E2D3D]">
@@ -67,7 +66,11 @@ const RootLayout: FC<InfoLayoutProps> = ({ children }) => {
             })}
           </div>
         </Folder>
-        <Folder folderTitle="find-me-also-in" image="down">
+        <Folder
+          folderTitle="find-me-also-in"
+          image="down"
+          intent={"doubleBorder"}
+        >
           <div className="p-[22px] flex flex-col gap-3">
             {findMeAlsoData.map((data, i) => {
               return (

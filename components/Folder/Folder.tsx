@@ -7,6 +7,7 @@ const folder = cva(["leading-none"], {
   variants: {
     intent: {
       default: ["text-white"],
+      doubleBorder: ["border-[#1E2D3D] border-t"],
     },
   },
 
