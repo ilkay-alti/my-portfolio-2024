@@ -24,7 +24,9 @@ const RootLayout: FC<InfoLayoutProps> = ({ children }) => {
           <Link href={item.href} key={i} className="w-6 h-6">
             <h3
               className={`flex flex-col items-center gap-2 text-[#607b9664] ${
-                pathname === item.href && "text-[#607b96]"
+                (pathname === item.href ||
+                  pathname.startsWith(item.href + "/")) &&
+                "text-[#607b96]"
               }`}
             >
               {item.icon}

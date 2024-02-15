@@ -72,7 +72,13 @@ const GlobalLayout: FC<GlobalLayoutProps> = ({ children }) => {
                     className="flex gap-2 text-[#607B96] group"
                   >
                     {data.icon}
-                    <label className="group-hover:text-white hover:cursor-pointer ">
+                    <label
+                      className={`group-hover:text-white hover:cursor-pointer ${
+                        (pathname === data.href ||
+                          pathname.startsWith(data.href + "/*")) &&
+                        "text-white "
+                      }`}
+                    >
                       {data.title}
                     </label>
                   </Link>
