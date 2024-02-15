@@ -62,8 +62,6 @@ const ProjectPage = () => {
     selectedTechnologies.some((tech) => project.techStack.includes(tech))
   );
 
-  console.log("Selected Technologies:", selectedTechnologies);
-  console.log("Filtered Projects:", filteredProjects);
   return (
     <div className="flex h-full">
       <div className="flex flex-col w-1/4 h-full border-r border-[#1E2D3D]">

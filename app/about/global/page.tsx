@@ -38,7 +38,7 @@ const BioPage = () => {
               <tr className="flex gap-10">
                 <td>8</td>
                 <td> * an associate s degree in Computer Programming.</td>
-              </tr>{" "}
+              </tr>
               <tr className="flex gap-10">
                 <td>8</td>
                 <td> */</td>
@@ -47,7 +47,6 @@ const BioPage = () => {
           </table>
         </div>
       </div>
-      <div>asd</div>
     </div>
   );
 };

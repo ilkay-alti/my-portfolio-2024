@@ -17,7 +17,6 @@ const menuData = [
 
 const RootLayout: FC<InfoLayoutProps> = ({ children }) => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div className="flex h-full">
       <div className="w-[68px] border-r border-[#1E2D3D] flex flex-col items-center gap-[33px] pt-5 ">
