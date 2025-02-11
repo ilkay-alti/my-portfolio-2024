@@ -1,71 +1,78 @@
 "use client";
 import SubmitMessage from "@/components/SubmitMessage/SubmitMessage";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const d = new Date();
-  useEffect(() => {
-    console.log(name);
-  }, [name]);
+  const date = new Date().toDateString();
 
   return (
-    <div className="flex flex-col h-full ">
-      <div className="flex h-[44px] border-b border-[#1E2D3D] ">
-        <div className="flex px-[14px] items-center gap-11 border-[#1E2D3D] border-r h-full">
-          <label className="text-[#607B96]">contacts</label>
-          <Image src="/close-icon.svg" alt="1" width={18} height={18} />
+    <div className="flex flex-col h-full">
+      {/* Header Section */}
+      <div className="flex h-[44px] border-b border-[#1E2D3D]">
+        <div className="flex px-[14px] items-center gap-11 border-r border-[#1E2D3D] h-full">
+          <span className="text-[#607B96]">contacts</span>
+          <Image
+            src="/close-icon.svg"
+            alt="Close icon"
+            width={18}
+            height={18}
+          />
         </div>
       </div>
+
+      {/* Main Content Section */}
       <div className="flex h-full">
-        <div className="px-[40px] border-r border-[#1E2D3D] flex justify-center ">
+        {/* Left Side: Submit Message Form */}
+        <div className="px-[40px] border-r border-[#1E2D3D] flex justify-center">
           <SubmitMessage
             setName={setName}
             setEmail={setEmail}
             setMessage={setMessage}
           />
         </div>
+
+        {/* Right Side: Code Display */}
         <div className="flex items-center">
           <div className="flex flex-col flex-grow px-[40px] max-w-[569px] text-[#5565E8]">
-            <label>
-              <a className="text-[#C98BDF]">const</a> button{" "}
-              <a className="text-[#C98BDF]">&#61;</a>{" "}
-              <a className="text-[#FEA55F]">
-                document.querySelector('#sendBtn');
-              </a>
-            </label>
-            <label>
-              <a className="text-[#C98BDF]">const</a> message{" "}
-              <a className="text-[#C98BDF]">&#61;</a> &#123;{" "}
-            </label>
-            <label>
-              name<a className="text-[#607B96]">: </a>
-              <a className="text-[#FEA55F]">"{name}",</a>
-            </label>
-            <label>
-              email<a className="text-[#607B96]">: </a>{" "}
-              <a className="text-[#FEA55F]">"{email}",</a>
-            </label>
-            <label>
-              message<a className="text-[#607B96]">: </a>{" "}
-              <a className="text-[#FEA55F]">"{message}",</a>
-            </label>
-            <label>
-              <a className="text-[#607B96]">date</a>
-              <a className="text-[#607B96]">: </a> "{d.toDateString()}",
-            </label>
-            <label className="text-[#607B96]">&#125;;</label>
-            <label className="text-[#607B96]">
-              <a className="text-[#C98BDF]">button.addEventListener</a>
-              &#40;
-              <a className="text-[#FEA55F]">'click'</a>,
-              <a className="text-[#C98BDF]">&#40;&#41;</a> &#61;&#62; &#123;
-            </label>
-            <label>form.send(message);</label>
-            <label className="text-[#607B96]">&#125;&#41;;</label>
+            <span>
+              <span className="text-[#C98BDF]">const</span> button{" "}
+              <span className="text-[#C98BDF]">=</span>{" "}
+              <span className="text-[#FEA55F]">
+                document.querySelector(&apos;#sendBtn&apos;);
+              </span>
+            </span>
+            <span>
+              <span className="text-[#C98BDF]">const</span> message{" "}
+              <span className="text-[#C98BDF]">=</span> {"{"}
+            </span>
+            <span>
+              name<span className="text-[#607B96]">: </span>
+              <span className="text-[#FEA55F]">&quot;{name}&quot;,</span>
+            </span>
+            <span>
+              email<span className="text-[#607B96]">: </span>
+              <span className="text-[#FEA55F]">&quot;{email}&quot;,</span>
+            </span>
+            <span>
+              message<span className="text-[#607B96]">: </span>
+              <span className="text-[#FEA55F]">&quot;{message}&quot;,</span>
+            </span>
+            <span>
+              date<span className="text-[#607B96]">: </span>
+              <span className="text-[#FEA55F]">&quot;{date}&quot;,</span>
+            </span>
+            <span className="text-[#607B96]">{"}"};</span>
+            <span className="text-[#607B96]">
+              <span className="text-[#C98BDF]">button.addEventListener</span>(
+              <span className="text-[#FEA55F]">&apos;click&apos;</span>,
+              <span className="text-[#C98BDF]">()</span> {"=>"} {"{"}
+            </span>
+            <span>form.send(message);</span>
+            <span className="text-[#607B96]">{"});"}</span>
           </div>
         </div>
       </div>
@@ -74,4 +81,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-// "flex items-center justify-center h-full px-8 border-r border-[#1E2D3D] "
